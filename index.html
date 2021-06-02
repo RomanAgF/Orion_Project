@@ -1,98 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Who wants to be a Millionaire?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js" defer></script>
+
 </head>
 
 <body>
-
     <div class="millionaire">
         <div class="millionaire-ui">
-            <div class="millionaire-top ui">
+            <div class="millionaire-top-top-ui">
                 <div class="millionaire-hints">
-                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-half"><i
+                    <div class="millionaire-hints_item millionaire-hints__hint millionaire-hints__hint-half"><i
                             class="fas fa-balance-scale"></i></div>
-                    <!-- <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint_disabled"><i class="fas fa-balance-scale"></i></div> -->
-                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-double"><i
-                            class="fas fa-check-double"></i></div>
-                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-protect"><i
+                    <div class="millionaire-hints_item millionaire-hints__hint millionaire-hints__hint-double"><i
+                            class="fas fa-balance-double"></i></div>
+                    <div class="millionaire-hints_item millionaire-hints__hint millionaire-hints__hint-half"><i
                             class="fas fa-shield-alt"></i></div>
                 </div>
                 <div class="millionaire-timer">
                     <div class="millionaire-timer__text">30</div>
-                    <div class="millionaire-timer__bg"></div>
+                    <div class="millionaire-timer_bg"></div>
                 </div>
                 <div class="millionaire-hints__item millionaire-end-game"><i class="fas fa-hand-holding-usd"></i></div>
             </div>
             <div class="millionaire-ui__question ui">
                 <div class="millionaire-ui__question-text">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam repellat, nesciunt sit assumenda quasi facere ab ratione voluptatum suscipit eligendi deleniti, eum possimus doloremque! Itaque dolore consequatur id sunt eligendi? -->
+
                 </div>
             </div>
-            <!-- <div class="millionaire-ui-answers millionaire-ui-answers_picked"> -->
             <div class="millionaire-ui-answers">
-                <!-- <div class="millionaire-ui-answers__item ui">One</div>
-				<div class="millionaire-ui-answers__item millionaire-ui-answers__item_picked ui">Two</div>
-				<div class="millionaire-ui-answers__item millionaire-ui-answers__item_fail ui">Three</div>
-				<div class="millionaire-ui-answers__item millionaire-ui-answers__item_accept ui">Four</div> -->
+
             </div>
+
         </div>
         <div class="millionaire-progress ui">
-            <div class="millionaire-progress-header">Ваш выигрыш:</div>
-            <div class="millionaire-progress-list">
-                <!-- <div class="millionaire-progress-list__item">100</div>
-				<div class="millionaire-progress-list__item">200</div>
-				<div class="millionaire-progress-list__item">300</div>
-				<div class="millionaire-progress-list__item">500</div>
-				<div class="millionaire-progress-list__item">1 000</div>
-				<div class="millionaire-progress-list__item">2 000</div>
-				<div class="millionaire-progress-list__item">4 000</div>
-				<div class="millionaire-progress-list__item">8 000</div>
-				<div class="millionaire-progress-list__item">16 000</div>
-				<div class="millionaire-progress-list__item">32 000</div>
-				<div class="millionaire-progress-list__item">64 000</div>
-				<div class="millionaire-progress-list__item">125 000</div>
-				<div class="millionaire-progress-list__item millionaire-progress-list__item_active">250 000</div>
-				<div class="millionaire-progress-list__item millionaire-progress-list__item_complete">500 000</div>
-				<div class="millionaire-progress-list__item millionaire-progress-list__item_complete">1 000 000</div> -->
-            </div>
+            <div class="millionaire-progress-header">Ваш выйгрыш:</div>
+            <div class="millionaire-progress-list"></div>
         </div>
     </div>
-
     <div class="modal-overlay modal-overlay_fill-bg">
         <div class="modal-window modal-window-welcome ui">
             <div class="modal-window-welcome__col">
                 <div class="modal-window-welcome__item">
-                    <h2 class="modal__title">Подсказки:</h2>
+                    <h2 class="modal__title">Подсказки</h2>
                     <div class="modal-hint-list">
                         <div class="modal-hint-item">
                             <i class="modal-hint-item__icon fas fa-balance-scale"></i>
                             <div class="modal-hint-item__info">
-                                <h3 class="modal-hint-item__title">&laquo;50x50&raquo;</h3>
-                                <div class="modal-hint-item__descr">Убирает два неверных ответа</div>
+                                <h3 class="modal-hint-item__item">&laquo;50:50&raquo;</h3>
+                                <div class="modal-hint-item__descr">Убирает 2 неверных ответа</div>
                             </div>
                         </div>
                         <div class="modal-hint-item">
                             <i class="modal-hint-item__icon fas fa-check-double"></i>
                             <div class="modal-hint-item__info">
-                                <h3 class="modal-hint-item__title">&laquo;Двойной шанс&raquo;</h3>
-                                <div class="modal-hint-item__descr">Дает возможность выбрать два варианта ответа, если
-                                    один из них
-                                    окажется верным, ваша удача :)</div>
+                                <h3 class="modal-hint__title">&laquo;Двойной шанс&raquo;</h3>
+                                <div class="modal-hint-item_descr">Дает возможность выбрать 2 варианта ответа, если один
+                                    из них окажется верным, ваша удача</div>
                             </div>
                         </div>
                         <div class="modal-hint-item">
                             <i class="modal-hint-item__icon fas fa-shield-alt"></i>
                             <div class="modal-hint-item__info">
-                                <h3 class="modal-hint-item__title">&laquo;Подстраховка&raquo;</h3>
-                                <div class="modal-hint-item__descr">Дает шанс на ошибку, если вы ответите неверно, игра
-                                    не закончится,
-                                    выигрышь останется тем же, а вам предоставят другой вопрос.</div>
+                                <h3 class="modal-hint-item__title">&laquo;Подстраховка;</h3>
+                                <div class="modal-hint-item_descr">Дает шанкс на ошибку,если вы ответите неверно, игра
+                                    не закончится,выйгрыш останется тем же,а вамдадут другой вопрос</div>
                             </div>
                         </div>
                     </div>
@@ -102,20 +80,17 @@
                 <div class="modal-window-welcome__item">
                     <h2 class="modal__title">Правила:</h2>
                     <div class="modal-window-welcome__rules">Вам нужно правильно ответить на поставленный вопрос. На
-                        каждый вопрос
-                        отводится по <span class="question-time">30</span> секунд. Каждый пятый вопрос вы получаете
-                        "несгораеммую
-                        сумму", это то, что вы получите при поражении. Или же в любой момент вы можете забрать то, что
-                        сейчас
-                        имеете, с помощью клавиши <i class="fas fa-hand-holding-usd"></i> </div>
+                        каждый вопрос отводится по <span class="question-time">30</span>секунд. Каждый 5 вопрос вы
+                        получаете несгораему сумму, это та сумма, которая будет получена при поражении. Или же вы в
+                        любой момент можете забрать то , что сейчас имеете , с помощью клавиши <i
+                            class="fas fa-hand-holding-usd"></i></div>
                 </div>
                 <div class="modal-window-welcome__item">
-                    <input value="max" type="text" autofocus class="modal__input ui" placeholder="Введите Ваше имя">
-                    <button class="modal__button modal-window-welcome__btn ui">Начать игру</button>
+                    <input value='max' type="text" autofocus class="modal__input ui" placeholder="Введите Ваше имя">
+                    <button class="modal__button modal-window-welcome__btn ui">НАЧАТЬ ИГРУ</button>
                 </div>
             </div>
         </div>
-
         <div class="banter-loader">
             <div class="banter-loader__box"></div>
             <div class="banter-loader__box"></div>
@@ -128,9 +103,6 @@
             <div class="banter-loader__box"></div>
         </div>
     </div>
-
-
 </body>
-
 
 </html>
