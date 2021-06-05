@@ -701,10 +701,86 @@ this.getChoise - function (el) {
     
     if(correct) setTimeout(that.accept, 1000, el);
     else {
-        setTimeout()
+        setTimeout(
+            function() {
+                that.fail(el);
+                that.showCorrect(el);
+            },
+            1000,
+            el
+        );
     }
-}
+};
+this.accept =function(item) {
+    item.classList.add('millionaire-ui-answers__item_accept');
+    that.stepInc();
+    setTimeout(function () {
+        that.setStep();
+        that.startRound();
+    }, 2000);
+};
 
+this.fail = function (item) {
+    item.classList.add("millionaire-ui-answers__item_fail");
+};
 
+this.showCorrect = function (item) {
+    for ( let key in that.currentRound.answer) {
+        if (that.currentRound.answer[key].accept == 'true') {
+            document
+            .querySelector(`[data-id="${that.currentRound.id}${key}]`)
+            .classList.add('millionaire-ui-answers__item_accept');
+            break;   
+        } else continue;
     }
+};
+
+this.endGame = function () {
+    //body..
+};
+
+this.hint = {
+    half: function {
+        let roll = [];
+        for (let key in that.currentRound.answer) {
+            if (that.currentRound.answer[key].accept == 'false') roll.push(key);
+        }
+        roll.splice(getRandomInt(0,roll.length), 1);
+        roll.forEach(function (el) {
+            let item = document.querySelector (
+                `[data-id='${that.currentRound.id}${el}']`
+            );
+            item.classList.add('millionaire-ui-answers__item_lock');
+        });
+    },
+};
+
+//выключить подсказку при клике 
+for (let i = 0; i < hints.length; i++) {
+    hints[i].addEventListener('click', function () {
+        this.classList.add('millionaire-hints__hint_disabled');
+    });
 }
+half.addEventListener('click', that.hint.half);
+
+//заполнить список прогресса
+progress.forEach ( function (el. i) {
+    let item = document.createElement('div');
+    item.classList.add('millionaire-progress-list__item');
+    item.innerText = `${splitIt(el)}$`;
+
+    progressList.appendChild(item);
+});
+
+this.setStep();
+
+// обработчик дял ответов 
+answers.addEventListener('click', function (e) {
+    let picked = event.target.closest(
+        '.millionaire-ui-answers__item:not(.millionaire-ui-answers__itemlock'
+    );
+    if(!picked) return;
+    that.getChoise(picked);
+});
+    }
+})();
