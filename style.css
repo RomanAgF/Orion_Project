@@ -334,3 +334,79 @@ html {
     filter: brightness(100%);
     transition: 0.3s;
 }
+
+.modal__button:hover {
+    filter: brightness(120%);
+}
+
+.modal-hint-item {
+    display: flex;
+}
+
+.modal-hint-item + .modal-hint-item {
+    margin-top: 0.8rem;
+}
+
+.modal-hint-item__icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+.modal-hint-item__title {
+    margin-bottom: 0.2rem;
+}
+
+@keyframes getAccept {
+    0%{
+        background-color: #50597b;
+    }
+    20% {
+        background-color: #11a8ab;
+    }
+    40% {
+        background-color: #50597b;
+    }
+    60% {
+        background-color: #11a8ab;
+    }
+    80% {
+        background-color: #50597b;
+    }
+    100% {
+        background-color: #11a8ab;
+    }
+    
+}
+
+@keyframes getAccept {
+    0%{
+        background-color: #50597b;
+    }
+    20% {
+        background-color: #e64c65;
+    }
+    40% {
+        background-color: #50597b;
+    }
+    60% {
+        background-color: #e64c65;
+    }
+    80% {
+        background-color: #50597b;
+    }
+    100% {
+        background-color: #e64c65;
+    }
+    
+}
+
+@keyframes timer {
+    0% {
+        height: 100%;
+    }
+    100% {height: 0;}
+}
