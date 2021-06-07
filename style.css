@@ -47,7 +47,7 @@ html {
 }
 
 .ui {
-    background-color: #171aa8;
+    background-color: #5154f3b7;
     border-radius: 0.5rem;
     overflow: hidden;
 }
@@ -60,8 +60,8 @@ html {
     height: 100vh;
     padding: 2rem;
     background-color: #222345;
-    color: #fff;
-    text-shadow: 0.1rem 0.1rem 0.1rem #97bffa;
+    color: rgb(17, 228, 98);
+    text-shadow: 0.1rem 0.1rem 0.1rem #040e1f;
 }
 
 .millionaire-top {
@@ -245,7 +245,7 @@ html {
 }
 
 .millionaire-progress-list__item_complete {
-    color: #7e86a5;
+    color: #ff0000;
 }
 
 .millionaire-progress-list__item-active {
@@ -342,7 +342,7 @@ html {
 
 .modal__button {
     border: none;
-    background-color: aqua;
+    background-color: rgb(139, 14, 14);
     font-weight: bold;
     color: azure;
     font-size: 1.2rem;

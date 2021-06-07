@@ -1,3 +1,4 @@
+"use strict";
 let data = {
   firstGroupQuest: [
     {
@@ -500,7 +501,7 @@ let data = {
       ".millionaire-hints__hint-protect:not(.millionaire-hints__hint_disabled)"
     );
 
-  var gameOptions,
+  let gameOptions,
     progress = [
       100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000,
       250000, 500000, 1000000,
@@ -537,10 +538,10 @@ let data = {
     number += "";
     separator = separator == undefined ? " " : separator;
 
-    var result = "",
+    let result = "",
       arr = [];
 
-    for (var i = 0; i < number.length; i++) {
+    for (let i = 0; i < number.length; i++) {
       arr.push(number[i]);
 
       if ((i - number.length) % 3 == 0 && i != 0) {
@@ -571,7 +572,7 @@ let data = {
   }
 
   function Game() {
-    var that = this;
+    let that = this;
 
     this.nickName = nickNameInput.value;
     this.timer = 30;
@@ -702,7 +703,7 @@ let data = {
       answers.classList.add("millionaire-ui-answers_picked");
       that.timerStop();
 
-      var id = el.getAttribute("data-id").slice(-1),
+      let id = el.getAttribute("data-id").slice(-1),
         correct = that.currentRound.answer[id].accept == "true";
 
       if (correct) setTimeout(that.accept, 1000, el);
