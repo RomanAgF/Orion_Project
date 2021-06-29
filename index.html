@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <meta charset="UTF-8"> -->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who wants to be a Millionaire?</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css"> -->
 
 <head>
     <meta charset="UTF-8">
@@ -7,64 +15,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who wants to be a Millionaire?</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-
 </head>
 
 <body>
-    <!-- <!-- partial:index.partial.html -->
     <div class="millionaire">
         <div class="millionaire-ui">
             <div class="millionaire-top ui">
                 <div class="millionaire-hints">
-                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-half"><i
+                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-half"
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="50Х50"><i
                             class="fas fa-balance-scale"></i></div>
-                    <!-- <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint_disabled"><i class="fas fa-balance-scale"></i></div> -->
-                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-double"><i
+                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-double"
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Двойной Шанс"><i
                             class="fas fa-check-double"></i></div>
-                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-protect"><i
+                    <div class="millionaire-hints__item millionaire-hints__hint millionaire-hints__hint-protect"
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Подстраховка"><i
                             class="fas fa-shield-alt"></i></div>
                 </div>
                 <div class="millionaire-timer">
                     <div class="millionaire-timer__text">30</div>
                     <div class="millionaire-timer__bg"></div>
                 </div>
-                <div class="millionaire-hints__item millionaire-end-game"><i class="fas fa-hand-holding-usd"></i></div>
+                <div class="millionaire-hints__item millionaire-end-game"></div>
             </div>
             <div class="millionaire-ui__question ui">
                 <div class="millionaire-ui__question-text">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam repellat, nesciunt sit assumenda quasi facere ab ratione voluptatum suscipit eligendi deleniti, eum possimus doloremque! Itaque dolore consequatur id sunt eligendi? -->
                 </div>
             </div>
-            <!-- <div class="millionaire-ui-answers millionaire-ui-answers_picked"> -->
             <div class="millionaire-ui-answers">
-                <!-- <div class="millionaire-ui-answers__item ui">One</div>
-            <div class="millionaire-ui-answers__item millionaire-ui-answers__item_picked ui">Two</div>
-            <div class="millionaire-ui-answers__item millionaire-ui-answers__item_fail ui">Three</div>
-            <div class="millionaire-ui-answers__item millionaire-ui-answers__item_accept ui">Four</div> -->
             </div>
         </div>
         <div class="millionaire-progress ui">
             <div class="millionaire-progress-header">Ваш выигрыш:</div>
             <div class="millionaire-progress-list">
-                <!-- <div class="millionaire-progress-list__item">100</div>
-            <div class="millionaire-progress-list__item">200</div>
-            <div class="millionaire-progress-list__item">300</div>
-            <div class="millionaire-progress-list__item">500</div>
-            <div class="millionaire-progress-list__item">1 000</div>
-            <div class="millionaire-progress-list__item">2 000</div>
-            <div class="millionaire-progress-list__item">4 000</div>
-            <div class="millionaire-progress-list__item">8 000</div>
-            <div class="millionaire-progress-list__item">16 000</div>
-            <div class="millionaire-progress-list__item">32 000</div>
-            <div class="millionaire-progress-list__item">64 000</div>
-            <div class="millionaire-progress-list__item">125 000</div>
-            <div class="millionaire-progress-list__item millionaire-progress-list__item_active">250 000</div>
-            <div class="millionaire-progress-list__item millionaire-progress-list__item_complete">500 000</div>
-            <div class="millionaire-progress-list__item millionaire-progress-list__item_complete">1 000 000</div> -->
             </div>
         </div>
     </div>
@@ -87,7 +75,7 @@
                             <div class="modal-hint-item__info">
                                 <h3 class="modal-hint-item__title">&laquo;Двойной шанс&raquo;</h3>
                                 <div class="modal-hint-item__descr">Дает возможность выбрать два варианта ответа, если
-                                    один из них окажется верным, ваша удача :)</div>
+                                    один из них окажется верным, вы проходите дальше.</div>
                             </div>
                         </div>
                         <div class="modal-hint-item">
@@ -106,8 +94,7 @@
                     <h2 class="modal__title">Правила:</h2>
                     <div class="modal-window-welcome__rules">Вам нужно правильно ответить на поставленный вопрос. На
                         каждый вопрос отводится по <span class="question-time">30</span> секунд. Каждый пятый вопрос вы
-                        получаете "несгораеммую сумму", это то, что вы получите при поражении. Или же в любой момент вы
-                        можете забрать то, что сейчас имеете, с помощью клавиши <i class="fas fa-hand-holding-usd"></i>
+                        получаете "несгораеммую сумму", это то, что вы получите при поражении.
                     </div>
                 </div>
                 <div class="modal-window-welcome__item">
@@ -129,8 +116,9 @@
             <div class="banter-loader__box"></div>
         </div>
     </div>
-    <!-- partial --> -->
-
+    <!-- Подключаем вопросы и игру -->
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
