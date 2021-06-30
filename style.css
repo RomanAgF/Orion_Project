@@ -232,7 +232,7 @@ html {
     display: flex;
     flex-direction: column-reverse;
     counter-reset: progress;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .millionaire-progress-list__item {

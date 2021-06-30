@@ -31,6 +31,7 @@ myAudio.play();
       100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000,
       250000, 500000, 1000000,
     ];
+
   // убрать прелоадер по загрузке   delete preload on load
   window.addEventListener("load", function () {
     modal.classList.remove("modal-overlay_fill-bg");
@@ -48,7 +49,7 @@ myAudio.play();
       // инициализация объекта настроек   initialization object setting
       let myAudio = new Audio("/sounds/thinking.mp3");
       myAudio.play();
-      
+
       gameOptions = new Game();
       gameOptions.startRound();
     } else {
@@ -92,11 +93,11 @@ myAudio.play();
   }
 
   function showModal(selector) {
-    alert('hi')// body...
+    alert("hi"); // body...
   }
 
   function hideModal(selector) {
-    alert('bye')// body...
+    alert("bye"); // body...
   }
 
   function Game() {
@@ -240,7 +241,6 @@ myAudio.play();
           function () {
             that.fail(el);
             that.showCorrect(el);
-
           },
           100,
           el
@@ -272,9 +272,10 @@ myAudio.play();
       }
     };
 
-    this.endGameByTime = function () {  //
+    this.endGameByTime = function () {
+      //
       setTimeout(() => {
-        alert('Игра окончена, попробуем еще раз');
+        alert("Игра окончена, попробуем еще раз");
         document.location.reload();
       }, 1500);
       // body...
@@ -285,7 +286,6 @@ myAudio.play();
 
         for (let key in that.currentRound.answer) {
           if (that.currentRound.answer[key].accept == "false") roll.push(key);
-          
         }
 
         roll.splice(getRandomInt(0, roll.length), 1);
