@@ -49,7 +49,6 @@ myAudio.play();
       // инициализация объекта настроек   initialization object setting
       let myAudio = new Audio("/sounds/thinking.mp3");
       myAudio.play();
-
       gameOptions = new Game();
       gameOptions.startRound();
     } else {
@@ -84,6 +83,7 @@ myAudio.play();
   }
 
   function checkNickName() {
+    // проверка имени
     if (nickNameInput.value)
       nickNameInput.classList.remove("modal__input_error");
   }
@@ -101,12 +101,16 @@ myAudio.play();
   }
 
   function Game() {
+    // игра
     let that = this;
 
     this.nickName = nickNameInput.value;
     this.timer = 30;
     this.step = 1;
     this.complexity;
+
+    this.doubleHintOn = false; //double подсказка false
+    this.protectHintOn = false; //protect подсказка false
 
     this.stepInc = function () {
       that.step++;
@@ -154,6 +158,7 @@ myAudio.play();
     };
 
     this.getQuestions = function () {
+      /// выборка вопросов по группе / choose questions by groups
       if (that.step < 5) that.complexity = "firstGroupQuest";
       if (that.step >= 5) that.complexity = "secondGroupQuest";
       if (that.step >= 10) that.complexity = "thirdGroupQuest";
@@ -183,6 +188,7 @@ myAudio.play();
     };
 
     this.startRound = function () {
+      // начало раунда
       that.timerStart();
 
       answers.classList.remove("millionaire-ui-answers_picked");
@@ -195,6 +201,7 @@ myAudio.play();
     };
 
     this.timerStart = function () {
+      //старт счетчика Timer start
       let counter = that.timer;
 
       document.querySelector(".millionaire-timer__bg").remove();
@@ -228,6 +235,7 @@ myAudio.play();
     };
 
     this.getChoise = function (el) {
+      ///проверка на правильный и неправильный ответ
       el.classList.add("millionaire-ui-answers__item_picked");
       answers.classList.add("millionaire-ui-answers_picked");
       that.timerStop();
@@ -236,11 +244,21 @@ myAudio.play();
         correct = that.currentRound.answer[id].accept == "true";
 
       if (correct) setTimeout(that.accept, 1000, el);
+      // проверка на правильность ответа + завершение игры
       else {
         setTimeout(
           function () {
             that.fail(el);
-            that.showCorrect(el);
+            if (that.doubleHintOn) {
+              that.doubleHintOn = false;
+            } else if (that.protectHintOn) {
+              that.protectHintOn = false;
+              that.showCorrect(el);
+              setTimeout(that.accept, 1000, el);
+            } else {
+              that.showCorrect(el);
+              that.endGameByTime();
+            }
           },
           100,
           el
@@ -262,6 +280,7 @@ myAudio.play();
     };
 
     this.showCorrect = function (item) {
+      // правильный ответ   answer +
       for (let key in that.currentRound.answer) {
         if (that.currentRound.answer[key].accept == "true") {
           document
@@ -273,6 +292,7 @@ myAudio.play();
     };
 
     this.endGameByTime = function () {
+      // завершение игры по ист-ю времени  end of game by tume
       //
       setTimeout(() => {
         alert("Игра окончена, попробуем еще раз");
@@ -280,6 +300,7 @@ myAudio.play();
       }, 1500);
       // body...
     };
+
     this.hint = {
       half: function () {
         let roll = [];
@@ -297,6 +318,12 @@ myAudio.play();
           item.classList.add("millionaire-ui-answers__item_lock");
         });
       },
+      double: function () {
+        that.doubleHintOn = true;
+      },
+      protect: function () {
+        that.protectHintOn = true;
+      },
     };
 
     // отключать подсказку при клике,  turn off hint onclick
@@ -307,6 +334,8 @@ myAudio.play();
     }
 
     half.addEventListener("click", that.hint.half);
+    double.addEventListener("click", that.hint.double);
+    protect.addEventListener("click", that.hint.protect);
 
     // заполнить список прогресса  fill the list of progress
     progress.forEach(function (el, i) {
