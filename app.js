@@ -1,6 +1,11 @@
 "use strict";
-let myAudio = new Audio("./sounds/begin.mp3");
-myAudio.play();
+// let myAudio = new Audio("/sounds/begin.mp3");
+// myAudio.play();
+
+const audio = document.querySelector("#audio");
+function togglePlay() {
+  return audio.paused ? audio.play() : audio.pause();
+}
 (function () {
   let modal = document.querySelector(".modal-overlay"),
     preloader = document.querySelector(".banter-loader"),
@@ -277,6 +282,8 @@ myAudio.play();
 
     this.fail = function (item) {
       item.classList.add("millionaire-ui-answers__item_fail");
+      let myAudio = new Audio("/sounds/wrong_ans.mp3");
+      myAudio.play();
     };
 
     this.showCorrect = function (item) {
