@@ -362,6 +362,8 @@ function togglePlay() {
       );
       if (!picked) return;
       that.getChoise(picked);
+      let myAudio = new Audio("/sounds/true answer.mp3");
+      myAudio.play();
     });
   }
 })();
