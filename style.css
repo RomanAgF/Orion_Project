@@ -131,10 +131,13 @@ html {
     background-color: #e64c65;
     color: #9099b7;
     cursor: default;
+    display: none;
 }
 
 .millionaire-hints__hint_disabled:hover {
     background-color: #e64c65;
+    
+    
 }
 
 .millionaire-ui {
