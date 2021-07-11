@@ -246,7 +246,7 @@ const data = {
           accept: "false",
         },
         b: {
-          text: "to highlight somebody's work done in last 7 days",
+          text: "to highlight ECO member's outstanding work done in last 7 days",
           accept: "true",
         },
         c: {
