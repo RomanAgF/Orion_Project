@@ -365,7 +365,7 @@ const data = {
     },
     {
       id: "2261",
-      question: "What is the date of first message in Discord?",
+      question: "Who is included in the ECO team?",
       answer: {
         a: { text: "Nishi Ault", accept: "false" },
         b: { text: "Enrique Karanam", accept: "false" },
@@ -404,16 +404,16 @@ const data = {
     //     d: { text: "Водяные часы", accept: "true" },
     //   },
     // },
-    {
-      id: "3390",
-      question: "How big was the reward for this picture by the Team?",
-      answer: {
-        a: { text: "40", accept: "true" },
-        b: { text: "5 points", accept: "false" },
-        c: { text: "10 poinst", accept: "false" },
-        d: { text: "25 points", accept: "false" },
-      },
-    },
+    // {
+    //   id: "3390",
+    //   question: "How big was the reward for this picture by the Team?",
+    //   answer: {
+    //     a: { text: "40", accept: "true" },
+    //     b: { text: "5 points", accept: "false" },
+    //     c: { text: "10 poinst", accept: "false" },
+    //     d: { text: "25 points", accept: "false" },
+    //   },
+    // },
     {
       id: "1727",
       question:
@@ -456,16 +456,16 @@ const data = {
         d: { text: "Brian Chesky", accept: "false" },
       },
     },
-    {
-      id: "5800",
-      question: "How big was the reward for this picture by the Team?",
-      answer: {
-        a: { text: "5 points", accept: "false" },
-        b: { text: "10 points", accept: "false" },
-        c: { text: "15 points", accept: "true" },
-        d: { text: "20 points", accept: "false" },
-      },
-    },
+    // {
+    //   id: "5800",
+    //   question: "How big was the reward for this picture by the Team?",
+    //   answer: {
+    //     a: { text: "5 points", accept: "false" },
+    //     b: { text: "10 points", accept: "false" },
+    //     c: { text: "15 points", accept: "true" },
+    //     d: { text: "20 points", accept: "false" },
+    //   },
+    // },
     // {
     //   id: "2920",
     //   question: "Какой европейский город раньше носил название Лютеция?",
