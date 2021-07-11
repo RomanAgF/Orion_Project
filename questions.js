@@ -1,4 +1,4 @@
-"use strict"; //
+"use strict";
 const data = {
   firstGroupQuest: [
     {
@@ -45,16 +45,6 @@ const data = {
         d: { text: "eco_not_a_bank", accept: "false" },
       },
     },
-    // {
-    //   id: "6905",
-    //   question: "Кого иногда называют спрутом?",
-    //   answer: {
-    //     a: { text: "Кашалота", accept: "false" },
-    //     b: { text: "Медузу", accept: "false" },
-    //     c: { text: "Каракатицу", accept: "false" },
-    //     d: { text: "Осьминога", accept: "true" },
-    //   },
-    // },
     {
       id: "5778",
       question: "What is ECO's official Telegram channel?",

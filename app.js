@@ -302,7 +302,7 @@ function togglePlay() {
       // завершение игры по ист-ю времени  end of game by tume
       //
       setTimeout(() => {
-        alert("Игра окончена, попробуем еще раз");
+        alert("GAME OVER, TRY AGAIN");
         document.location.reload();
       }, 1500);
       // body...
