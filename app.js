@@ -7,7 +7,7 @@ function togglePlay() {
   return audio.paused ? audio.play() : audio.pause();
 }
 (function () {
-  let modal = document.querySelector(".modal-overlay"),
+  const modal = document.querySelector(".modal-overlay"),
     preloader = document.querySelector(".banter-loader"),
     counterWrap = document.querySelector(".millionaire-timer"),
     counterText = document.querySelector(".millionaire-timer__text"),
@@ -63,9 +63,6 @@ function togglePlay() {
 
   // ввод после попытки начать без имени enter name after trying without name
   nickNameInput.addEventListener("keypress", checkNickName);
-  nickNameInput.addEventListener("keydown", checkNickName);
-  nickNameInput.addEventListener("keyup", checkNickName);
-  nickNameInput.addEventListener("change", checkNickName);
 
   function splitIt(number, separator) {
     number += "";
@@ -132,6 +129,7 @@ function togglePlay() {
           break;
         case 15:
           that.bank = progress[14];
+          alert("Hi"); // победа
           break;
         default:
           that.bank = 0;
